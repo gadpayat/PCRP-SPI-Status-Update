@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -22,26 +21,33 @@
 
 html,body{
     width:100%;
-    height:100%;
+    min-height:100%;
     background:transparent;
     overflow-x:hidden;
 }
 
 /* ======================================
    CONTAINER
+   4 COLUMNS × 3 ROWS
+   ROW 1 = 4 BUTTONS
+   ROW 2 = 4 BUTTONS
+   ROW 3 = 2 BUTTONS
 ====================================== */
 
 .container{
-
     width:100%;
-    display:flex;
+    display:grid;
+
+    grid-template-columns:repeat(4, 220px);
+    grid-template-rows:repeat(3, 250px);
+
     justify-content:center;
     align-items:center;
-    gap:35px;
+
+    column-gap:35px;
+    row-gap:35px;
 
     padding:40px;
-    flex-wrap:wrap;
-
 }
 
 /* ======================================
@@ -65,9 +71,9 @@ html,body{
 
     background:
     linear-gradient(
-    145deg,
-    rgba(255,255,255,0),
-    rgba(255,255,255,0)
+        145deg,
+        rgba(255,255,255,0),
+        rgba(255,255,255,0)
     );
 
     backdrop-filter:blur(.5px);
@@ -88,55 +94,48 @@ html,body{
     position:relative;
 
     overflow:hidden;
-
 }
 
-/* glossy shine */
+/* ======================================
+   GLOSSY SHINE
+====================================== */
 
 .spi-button::before{
 
-content:'';
+    content:'';
 
-position:absolute;
+    position:absolute;
 
-top:-120%;
+    top:-120%;
+    left:-45%;
 
-left:-45%;
+    width:60%;
+    height:300%;
 
-width:60%;
+    background:rgba(255,255,255,.35);
 
-height:300%;
+    transform:rotate(25deg);
 
-background:rgba(255,255,255,.35);
-
-transform:rotate(25deg);
-
-transition:.7s;
-
+    transition:.7s;
 }
 
 .spi-button:hover::before{
-
-left:130%;
-
+    left:130%;
 }
 
 .spi-button:hover{
 
-transform:
+    transform:
+    translateY(-10px)
+    scale(1.04);
 
-translateY(-10px)
+    box-shadow:
 
-scale(1.04);
+    0 25px 45px rgba(0,0,0,.45),
 
-box-shadow:
+    0 0 35px rgba(255,255,255,.45),
 
-0 25px 45px rgba(0,0,0,.45),
-
-0 0 35px rgba(255,255,255,.45),
-
-inset 0 2px 12px rgba(255,255,255,.6);
-
+    inset 0 2px 12px rgba(255,255,255,.6);
 }
 
 /* ======================================
@@ -145,23 +144,21 @@ inset 0 2px 12px rgba(255,255,255,.6);
 
 .logo{
 
-width:120px;
-height:120px;
+    width:120px;
+    height:120px;
 
-border-radius:50%;
+    border-radius:50%;
 
-background:white;
+    background:white;
 
-padding:8px;
+    padding:8px;
 
-object-fit:contain;
+    object-fit:contain;
 
-box-shadow:
+    box-shadow:
+    0 8px 20px rgba(0,0,0,.25);
 
-0 8px 20px rgba(0,0,0,.25);
-
-margin-bottom:22px;
-
+    margin-bottom:22px;
 }
 
 /* ======================================
@@ -170,245 +167,155 @@ margin-bottom:22px;
 
 .title{
 
-font-size:22px;
+    font-size:22px;
 
-font-weight:700;
+    font-weight:700;
 
-text-align:center;
+    text-align:center;
 
-line-height:1.35;
+    line-height:1.35;
 
-padding:0 18px;
+    padding:0 18px;
 
-color:white;
+    color:white;
 
-text-shadow:
-
-0 2px 5px rgba(0,0,0,.45);
-
+    text-shadow:
+    0 2px 5px rgba(0,0,0,.45);
 }
 
 /* ======================================
    RESPONSIVE
 ====================================== */
 
-@media(max-width:1100px){
+@media(max-width:1050px){
 
-.container{
-
-flex-wrap:wrap;
-
-}
-
-}
-
-@media(max-width:700px){
-
-.spi-button{
-
-width:90%;
-max-width:320px;
+    .container{
+        grid-template-columns:repeat(2, 220px);
+        grid-template-rows:auto;
+    }
 
 }
+
+@media(max-width:550px){
+
+    .container{
+        grid-template-columns:1fr;
+        grid-template-rows:auto;
+
+        padding:25px 15px;
+    }
+
+    .spi-button{
+        width:90%;
+        max-width:320px;
+        justify-self:center;
+    }
 
 }
 
 </style>
-
 </head>
 
 <body>
 
 <div class="container">
 
+<!-- ROW 1 -->
+
 <!-- BOKOD -->
-
-<a class="spi-button"
-href="#"
-target="_blank">
-
-<img src="Bokod.png"
-class="logo">
-
-<div class="title">
-
-Bokod<br>
-
-SPI Status Update
-
-</div>
-
+<a class="spi-button" href="#" target="_blank">
+    <img src="Bokod.png" class="logo">
+    <div class="title">
+        Bokod<br>
+        SPI Status Update
+    </div>
 </a>
 
-<!-- Buguias -->
-
-<a class="spi-button"
-href="#"
-target="_blank">
-
-<img src="Buguias.png"
-class="logo">
-
-<div class="title">
-
-Buguias<br>
-
-SPI Status Update
-
-</div>
-
+<!-- BUGUIAS -->
+<a class="spi-button" href="#" target="_blank">
+    <img src="Buguias.png" class="logo">
+    <div class="title">
+        Buguias<br>
+        SPI Status Update
+    </div>
 </a>
 
 <!-- CALANASAN -->
-
-<a class="spi-button"
-href="#"
-target="_blank">
-
-<img src="Calanasan.png"
-class="logo">
-
-<div class="title">
-
-Calanasan<br>
-
-SPI Status Update
-
-</div>
-
+<a class="spi-button" href="#" target="_blank">
+    <img src="Calanasan.png" class="logo">
+    <div class="title">
+        Calanasan<br>
+        SPI Status Update
+    </div>
 </a>
 
 <!-- CONNOR -->
-
-<a class="spi-button"
-href="#"
-target="_blank">
-
-<img src="Connor.png"
-class="logo">
-
-<div class="title">
-
-Connor<br>
-
-SPI Status Update
-
-</div>
-
+<a class="spi-button" href="#" target="_blank">
+    <img src="Connor.png" class="logo">
+    <div class="title">
+        Connor<br>
+        SPI Status Update
+    </div>
 </a>
 
+
+<!-- ROW 2 -->
+
 <!-- DAGUIOMAN -->
-
-<a class="spi-button"
-href="#"
-target="_blank">
-
-<img src="Daguioman.png"
-class="logo">
-
-<div class="title">
-
-Daguioman<br>
-
-SPI Status Update
-
-</div>
-
+<a class="spi-button" href="#" target="_blank">
+    <img src="Daguioman.png" class="logo">
+    <div class="title">
+        Daguioman<br>
+        SPI Status Update
+    </div>
 </a>
 
 <!-- KABUGAO -->
-
-<a class="spi-button"
-href="#"
-target="_blank">
-
-<img src="Kabugao.png"
-class="logo">
-
-<div class="title">
-
-Kabugao<br>
-
-SPI Status Update
-
-</div>
-
+<a class="spi-button" href="#" target="_blank">
+    <img src="Kabugao.png" class="logo">
+    <div class="title">
+        Kabugao<br>
+        SPI Status Update
+    </div>
 </a>
 
 <!-- LUBA -->
-
-<a class="spi-button"
-href="#"
-target="_blank">
-
-<img src="Luba.png"
-class="logo">
-
-<div class="title">
-
-Luba<br>
-
-SPI Status Update
-
-</div>
-
+<a class="spi-button" href="#" target="_blank">
+    <img src="Luba.png" class="logo">
+    <div class="title">
+        Luba<br>
+        SPI Status Update
+    </div>
 </a>
 
 <!-- MALIBCONG -->
-
-<a class="spi-button"
-href="#"
-target="_blank">
-
-<img src="Malibcong.png"
-class="logo">
-
-<div class="title">
-
-Malibcong<br>
-
-SPI Status Update
-
-</div>
-
+<a class="spi-button" href="#" target="_blank">
+    <img src="Malibcong.png" class="logo">
+    <div class="title">
+        Malibcong<br>
+        SPI Status Update
+    </div>
 </a>
 
+
+<!-- ROW 3 -->
+
 <!-- SADANGA -->
-
-<a class="spi-button"
-href="#"
-target="_blank">
-
-<img src="Sadanga.png"
-class="logo">
-
-<div class="title">
-
-Sadanga<br>
-
-SPI Status Update
-
-</div>
-
+<a class="spi-button" href="#" target="_blank">
+    <img src="Sadanga.png" class="logo">
+    <div class="title">
+        Sadanga<br>
+        SPI Status Update
+    </div>
 </a>
 
 <!-- SAGADA -->
-
-<a class="spi-button"
-href="#"
-target="_blank">
-
-<img src="Sagada.png"
-class="logo">
-
-<div class="title">
-
-Sagada<br>
-
-SPI Status Update
-
-</div>
-
+<a class="spi-button" href="#" target="_blank">
+    <img src="Sagada.png" class="logo">
+    <div class="title">
+        Sagada<br>
+        SPI Status Update
+    </div>
 </a>
 
 </div>
