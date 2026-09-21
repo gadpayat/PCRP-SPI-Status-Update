@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>SPI Status Update</title>
+
+<style>
+
+/* ======================================
+   GLOBAL SETTINGS
+====================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI',Arial,sans-serif;
+}
+
+html,body{
+    width:100%;
+    height:100%;
+    background:transparent;
+    overflow-x:hidden;
+}
+
+/* ======================================
+   CONTAINER
+====================================== */
+
+.container{
+
+    width:100%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:35px;
+
+    padding:40px;
+    flex-wrap:wrap;
+
+}
+
+/* ======================================
+   GLASS BUTTON
+====================================== */
+
+.spi-button{
+
+    width:220px;
+    height:250px;
+
+    text-decoration:none;
+    color:white;
+
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+
+    border-radius:28px;
+
+    background:
+    linear-gradient(
+    145deg,
+    rgba(255,255,255,0),
+    rgba(255,255,255,0)
+    );
+
+    backdrop-filter:blur(.5px);
+    -webkit-backdrop-filter:blur(.5px);
+
+    border:1px solid rgba(255,255,255,.05);
+
+    box-shadow:
+
+    inset 0 2px 8px rgba(255,255,255,.55),
+
+    inset 0 -5px 10px rgba(0,0,0,.15),
+
+    0 15px 35px rgba(0,0,0,.30);
+
+    transition:.35s;
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+/* glossy shine */
+
+.spi-button::before{
+
+content:'';
+
+position:absolute;
+
+top:-120%;
+
+left:-45%;
+
+width:60%;
+
+height:300%;
+
+background:rgba(255,255,255,.35);
+
+transform:rotate(25deg);
+
+transition:.7s;
+
+}
+
+.spi-button:hover::before{
+
+left:130%;
+
+}
+
+.spi-button:hover{
+
+transform:
+
+translateY(-10px)
+
+scale(1.04);
+
+box-shadow:
+
+0 25px 45px rgba(0,0,0,.45),
+
+0 0 35px rgba(255,255,255,.45),
+
+inset 0 2px 12px rgba(255,255,255,.6);
+
+}
+
+/* ======================================
+   LOGO
+====================================== */
+
+.logo{
+
+width:120px;
+height:120px;
+
+border-radius:50%;
+
+background:white;
+
+padding:8px;
+
+object-fit:contain;
+
+box-shadow:
+
+0 8px 20px rgba(0,0,0,.25);
+
+margin-bottom:22px;
+
+}
+
+/* ======================================
+   TITLE
+====================================== */
+
+.title{
+
+font-size:22px;
+
+font-weight:700;
+
+text-align:center;
+
+line-height:1.35;
+
+padding:0 18px;
+
+color:white;
+
+text-shadow:
+
+0 2px 5px rgba(0,0,0,.45);
+
+}
+
+/* ======================================
+   RESPONSIVE
+====================================== */
+
+@media(max-width:1100px){
+
+.container{
+
+flex-wrap:wrap;
+
+}
+
+}
+
+@media(max-width:700px){
+
+.spi-button{
+
+width:90%;
+max-width:320px;
+
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<!-- BOKOD -->
+
+<a class="spi-button"
+href="#"
+target="_blank">
+
+<img src="images/Bokod.png"
+class="logo">
+
+<div class="title">
+
+Bokod<br>
+
+SPI Status Update
+
+</div>
+
+</a>
+
+<!-- Buguias -->
+
+<a class="spi-button"
+href="#"
+target="_blank">
+
+<img src="images/Buguias.png"
+class="logo">
+
+<div class="title">
+
+Buguias<br>
+
+SPI Status Update
+
+</div>
+
+</a>
+
+<!-- CALANASAN -->
+
+<a class="spi-button"
+href="#"
+target="_blank">
+
+<img src="images/Calanasan.png"
+class="logo">
+
+<div class="title">
+
+Calanasan<br>
+
+SPI Status Update
+
+</div>
+
+</a>
+
+<!-- CONNOR -->
+
+<a class="spi-button"
+href="#"
+target="_blank">
+
+<img src="images/Connor.png"
+class="logo">
+
+<div class="title">
+
+Connor<br>
+
+SPI Status Update
+
+</div>
+
+</a>
+
+<!-- DAGUIOMAN -->
+
+<a class="spi-button"
+href="#"
+target="_blank">
+
+<img src="images/Daguioman.png"
+class="logo">
+
+<div class="title">
+
+Daguioman<br>
+
+SPI Status Update
+
+</div>
+
+</a>
+
+<!-- KABUGAO -->
+
+<a class="spi-button"
+href="#"
+target="_blank">
+
+<img src="images/Kabugao.png"
+class="logo">
+
+<div class="title">
+
+Kabugao<br>
+
+SPI Status Update
+
+</div>
+
+</a>
+
+<!-- LUBA -->
+
+<a class="spi-button"
+href="#"
+target="_blank">
+
+<img src="images/Luba.png"
+class="logo">
+
+<div class="title">
+
+Luba<br>
+
+SPI Status Update
+
+</div>
+
+</a>
+
+<!-- MALIBCONG -->
+
+<a class="spi-button"
+href="#"
+target="_blank">
+
+<img src="images/Malibcong.png"
+class="logo">
+
+<div class="title">
+
+Malibcong<br>
+
+SPI Status Update
+
+</div>
+
+</a>
+
+<!-- SADANGA -->
+
+<a class="spi-button"
+href="#"
+target="_blank">
+
+<img src="images/Sadanga.png"
+class="logo">
+
+<div class="title">
+
+Sadanga<br>
+
+SPI Status Update
+
+</div>
+
+</a>
+
+<!-- SAGADA -->
+
+<a class="spi-button"
+href="#"
+target="_blank">
+
+<img src="images/Sagada.png"
+class="logo">
+
+<div class="title">
+
+Sagada<br>
+
+SPI Status Update
+
+</div>
+
+</a>
+
+</div>
+
+</body>
+</html>
