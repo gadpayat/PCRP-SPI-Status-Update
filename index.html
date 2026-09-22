@@ -31,7 +31,7 @@ html,body{
    4 COLUMNS × 3 ROWS
    ROW 1 = 4 BUTTONS
    ROW 2 = 4 BUTTONS
-   ROW 3 = 2 BUTTONS
+   ROW 3 = 2 CENTERED BUTTONS
 ====================================== */
 
 .container{
@@ -48,6 +48,15 @@ html,body{
     row-gap:35px;
 
     padding:40px;
+}
+
+/* Center the final two buttons symmetrically */
+.container .spi-button:nth-child(9){
+    grid-column:2;
+}
+
+.container .spi-button:nth-child(10){
+    grid-column:3;
 }
 
 /* ======================================
@@ -194,6 +203,12 @@ html,body{
         grid-template-rows:auto;
     }
 
+    /* Reset desktop positioning on smaller screens */
+    .container .spi-button:nth-child(9),
+    .container .spi-button:nth-child(10){
+        grid-column:auto;
+    }
+
 }
 
 @media(max-width:550px){
@@ -209,6 +224,11 @@ html,body{
         width:90%;
         max-width:320px;
         justify-self:center;
+    }
+
+    .container .spi-button:nth-child(9),
+    .container .spi-button:nth-child(10){
+        grid-column:auto;
     }
 
 }
